@@ -9,13 +9,13 @@ const contactInfo = [
     {
         icon: LuMail,
         label: "Email",
-        value: "example@gmail.com",
+        value: "ariftiansyah@gmail.com",
         href: "mailto:emanuel@example.com",
     },
     {
         icon: LuPhone,
         label: "Contact",
-        value: "+62 895 XXXX XXXX",
+        value: "+62 895 0449 0059",
         href: "tel:+234XXXXXXXXXX",
     },
     {
