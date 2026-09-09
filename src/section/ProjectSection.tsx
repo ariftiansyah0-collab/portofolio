@@ -27,11 +27,11 @@ export default function ProjectSection() {
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" 
                 />
             <SectionHeader 
-            title="Some of my latest" 
-            highlight="work" 
+            title="Beberapa karya terbaru" 
+            highlight="saya" 
             badge="projects" 
-            description="A selection of projects showcasing
-            my ability to design, build, and scale modern fullstack applications." />
+            description="Pilihan proyek yang menampilkan kemampuan saya dalam merancang,
+            membangun, dan mengembangkan skala aplikasi full-stack modern." />
                 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
                 {project.map((project,index) => (

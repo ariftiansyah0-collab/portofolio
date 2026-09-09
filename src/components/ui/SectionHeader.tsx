@@ -15,7 +15,7 @@ export default function SectionHeader({
         <div className="max-w-2xl mx-auto text-center space-y-4">
             {/* Badge */}
             {badge && (
-                <span className="inline-block text-sm text-primary/10
+                <span className="inline-block text-sm text-primary bg-primary/10
                 px-4 py-1.5 rounded-full border border-border">
                     {badge}
                 </span>

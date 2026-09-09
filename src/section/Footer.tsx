@@ -16,8 +16,7 @@ export default function Footer() {
                             <Logo/>
                         </div>
                         <p className="text-sm text-gray-300">
-                            Crafting modern, scalable web experience with clean
-                            code and thoughtful design. 
+                            Membangun pengalaman web modern dan skalabel dengan kode yang bersih serta desain yang matang. 
                         </p>
                     </div>
 
@@ -36,7 +35,7 @@ export default function Footer() {
                     {/* bottom footer */}
 
                     <p className="text-center text-gray-400 text-sm">
-                        &copy; {new Date().getFullYear()} nextdev. All rights reserved
+                        &copy; {new Date().getFullYear()} fajrieldev. All rights reserved
                     </p>
             </div>
         </footer>

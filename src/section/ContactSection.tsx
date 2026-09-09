@@ -14,7 +14,7 @@ const contactInfo = [
     },
     {
         icon: LuPhone,
-        label: "Contact",
+        label: "Kontak",
         value: "+62 895 0449 0059",
         href: "tel:+234XXXXXXXXXX",
     },
@@ -56,20 +56,20 @@ export default function ContactSection() {
             <div className="w-[90%] max-w-6xl mx-auto relative z-10 space-y-16">
                 <div className="absolute top-1/3 right-1/4 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
                 <SectionHeader
-                    title="Let's build"
-                    highlight="something great"
+                    title="Mari kita ciptakan"
+                    highlight="sesuatu yang hebat"
                     badge="Contact"
-                    description="Have a project in min? I'd love to hear about it. Let's connect"
+                    description="Punya rencana proyek? Saya ingin sekali mendengarnya. Mari terhubung."
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                     {/* left - form */}
                     <form onSubmit={onSubmit} className="p-6 rounded-2xl bg-surface border-border space-y-5">
-                        <h3 className="text-lg font-semibold text-text">Send message</h3>
+                        <h3 className="text-lg font-semibold text-text">Kirim Pesan</h3>
                         {/* name */}
                         <div>
-                            <label className="text-sm text-gray-400 block mb-1">Name</label>
-                            <input type="text" required placeholder="Your Name"
+                            <label className="text-sm text-gray-400 block mb-1">Nama</label>
+                            <input type="text" required placeholder="Nama kamu"
                             name="name"
                                 className="w-full px-4 py-2 rounded-lg
                                 bg-background border border-border
@@ -88,8 +88,8 @@ export default function ContactSection() {
                             />
                         </div>
                         <div>
-                            <label className="text-sm text-gray-400 block mb-1">Messege...</label>
-                            <textarea name="message" required rows={4} placeholder="Your Message..."
+                            <label className="text-sm text-gray-400 block mb-1">Pesan</label>
+                            <textarea name="message" required rows={4} placeholder="Tulis Pesan"
                             className="w-full px-4 py-2 rounded-lg bg-background border border-border text-text outline-none focus:border-primary transition resize-none"
                         />
                         </div>
@@ -98,13 +98,13 @@ export default function ContactSection() {
                         cursor-pointer">
                             {loading ? <>
                             <span className="w-6 h-6 border-3 border-white/30 border-t white rounded-full animate-spin"></span>
-                            Sending message...</> : <>
-                            Send Message
+                            Proses mengirim...</> : <>
+                            Kirim Pesan
                             <LuSend className="w-4 h-4"/></>}
                         </button>
                     </form>
                     <div className="p-2">
-                        <h3 className="text-xl font-semibold mb-6 text-text">Contact Information</h3>
+                        <h3 className="text-xl font-semibold mb-6 text-text">Kontak Informasi</h3>
                         <div className="space-y-4">
                             {contactInfo.map((item,index) => (
                                 <a href={item.href} key={index} className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group">

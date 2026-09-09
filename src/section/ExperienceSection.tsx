@@ -11,12 +11,12 @@ const experiences = [
     {
         role: "Game Developer",
         company: "Personal Project",
-        period: "2025 - Present",
+        period: "2026 - Present",
         description: "Belajar dan bereksperimen dengan Unity di level kode — membangun sistem gameplay berbasis trigger seperti collider interaction, coroutine, dan boolean flag untuk mekanik first-person controller.",
         technologies: ["Unity", "C#", "Game Mechanics"],
     },
     {
-        role: "Web Development",
+        role: "Web Developer",
         company: "Self-Taught",
         period: "2025",
         description: "Memulai perjalanan sebagai developer dengan mempelajari fundamental web development, lalu memperdalam ekosistem Next.js — termasuk image optimization, integrasi database (Prisma), dan realtime data.",
@@ -30,11 +30,11 @@ export default function ExperienceSection() {
             <div className="absolute top-1/2 left-1/4 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10"/>
                 <div className="container mx-auto px-6 relative z-10">
                     <SectionHeader 
-                    title="Experience that" 
-                    highlight="speaks volume" 
+                    title="Pengalaman yang" 
+                    highlight="sangat berarti" 
                     badge="Experience" 
-                    description=" A timeline of my growth as a developer, 
-                    from learning the fundamental to building fullstack applications."
+                    description="Linimasa perkembangan saya sebagai pengembang, 
+                    mulai dari mempelajari dasar-dasar hingga membangun aplikasi fullstack"
                     />
 
                     <div className="relative mt-14">

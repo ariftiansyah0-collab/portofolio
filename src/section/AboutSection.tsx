@@ -28,22 +28,20 @@ export default function AboutSection() {
                 {/* RightSide */}
                 <div className="space-y-6">
                     <span className="text-sm text-primary bg-primary/10 px-4 py-1.5
-                    rounded-full border border-border inline-block">About Me
+                    rounded-full border border-border inline-block">Tentang saya
                     </span>
 
                     <h2 className="text-3xl md:text-4xl font-bold text-text leading-tight">
-                        I build scalable and user focused web applications
+                    Membangun aplikasi web yang skalabel dan berorientasi pada pengguna.
                     </h2>
-                    <p className="text-gray-400 max-w-xl">I&apos;m a fullstack developer specializing in Next.js and modern web
-                        texhnologies. I enjoy building fast, scalable, and visually clean applications that
-                        solve real-world problems. My focus in on writing maintainable and deliverfing smooth
-                        user experiences.
+                    <p className="text-gray-400 max-w-xl">  Saya adalah pengembang FullStack yang berspesialisasi
+                        dalam Next.js dan teknologi web modern. Saya senang membangun aplikasi yang cepat, dapat
+                        diskalakan, dan memiliki tampilan bersih untuk memecahkan masalah di dunia nyata. Fokus saya
+                        adalah menulis kode yang mudah dikelola serta menghadirkan pengalaman pengguna yang mulus.
                     </p>
                     <p className="text-gray-400 max-w-xl">
-                        Over time, I&apos;ve worked with tools like TypeScript,
-                        Supabase, and
-                        modern UI systems to create projects that are both functional and
-                        production-ready.
+                    Seiring berjalannya waktu, saya telah bekerja menggunakan berbagai alat seperti TypeScript, Supabase, dan sistem UI 
+                    modern untuk membuat proyek yang fungsional sekaligus siap untuk tahap produksi.
                     </p>
 
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
@@ -53,11 +51,11 @@ export default function AboutSection() {
                         </div>
                         <div className="p-4 rounded-xl bg-surface border border-border text-center">
                             <LuDatabase className="mx-auto mb-2 text-primary w-6-h-6" />
-                            <p className="text-text text-sm">Fullstack Apps</p>
+                            <p className="text-text text-sm">Aplikasi Full-stacks</p>
                         </div>
                         <div className="p-4 rounded-xl bg-surface border border-border text-center">
                             <LuRocket className="mx-auto mb-2 text-primary w-6-h-6" />
-                            <p className="text-text text-sm">Perfomance</p>
+                            <p className="text-text text-sm">Peforma</p>
                         </div>
                     </div>
                 </div>

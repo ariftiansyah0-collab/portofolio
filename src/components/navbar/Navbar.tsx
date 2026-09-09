@@ -8,11 +8,11 @@ import LinkButton from "../ui/LinkButton"
 import MobileNav from "./MobileNav"
 
 export const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#experience", label: "Experience" },
-    { href: "#contact", label: "Contact" },
+    { href: "#home", label: "Beranda" },
+    { href: "#about", label: "Tentang saya" },
+    { href: "#projects", label: "Projek" },
+    { href: "#experience", label: "Pengalaman" },
+    { href: "#contact", label: "Kontak" },
 
 ]
 export default function Navbar() {
