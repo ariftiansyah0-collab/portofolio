@@ -69,7 +69,7 @@ export default function ContactSection() {
                         {/* name */}
                         <div>
                             <label className="text-sm text-gray-400 block mb-1">Nama</label>
-                            <input type="text" required placeholder="Nama kamu"
+                            <input type="text" required placeholder="Nama"
                             name="name"
                                 className="w-full px-4 py-2 rounded-lg
                                 bg-background border border-border
@@ -82,14 +82,14 @@ export default function ContactSection() {
                             <input
                             name="email"
                                 type="text"
-                                required placeholder="Your Email"
+                                required placeholder="Email"
                                 className="w-full px-4 py-2 rounded-lg
                                   bg-background border border-border text-text outline-none focus:border-primary transition"
                             />
                         </div>
                         <div>
                             <label className="text-sm text-gray-400 block mb-1">Pesan</label>
-                            <textarea name="message" required rows={4} placeholder="Tulis Pesan"
+                            <textarea name="message" required rows={4} placeholder="Pesan"
                             className="w-full px-4 py-2 rounded-lg bg-background border border-border text-text outline-none focus:border-primary transition resize-none"
                         />
                         </div>

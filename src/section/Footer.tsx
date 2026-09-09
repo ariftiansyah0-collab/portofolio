@@ -1,6 +1,6 @@
 import Logo from "@/components/navbar/Logo";
 import Link from "next/link";
-import { LuGithub, LuInstagram, LuYoutube } from "react-icons/lu";
+import { LuGithub, LuInstagram, LuYoutube, LuContact } from "react-icons/lu";
 
 export default function Footer() {
     return (
@@ -22,12 +22,23 @@ export default function Footer() {
 
                     {/* social  */}
                     <div className="flex items-center gap-4">
-                        {[LuGithub,LuInstagram,LuYoutube].map((Icon,index) => (
-                            <Link key={index} href="#" className="w-10 h-10 rounded-full flex items-center justify-center border border-border
-                            text-gray-300 hover:text-primary hover:shadow-[0_0_20px_rgba(32,178,166,0.2)] transition-all duration-300">
-                                <Icon className="w-5 h-5"/>
-                            </Link>
-                        ))}
+                        {[
+                            { icon: LuGithub, href:"https://github.com/ariftiansyah0-collab"},
+                            { icon: LuYoutube, href:"https://www.youtube.com/@_FAJRIEL23"},
+                            { icon: LuInstagram, href:"https://www.instagram.com/_fajrielyangitu/"},
+                        ].map((item, index) => {
+                            const IconComponent = item.icon;
+
+                            return (
+                                <Link
+                                    key={index}
+                                    href={item.href}
+                                    className="w-10 h-10 rounded-full flex items-center justify-center border border-border text-gray-300 hover:text-primary hover:shadow-[0_0_20px_rgba(32,178,166,0.2)] transition-all duration-300"
+                                >
+                                    <IconComponent className="w-5 h-5" />
+                                </Link>
+                            );
+                        })}
                     </div>
                 </div>
 
