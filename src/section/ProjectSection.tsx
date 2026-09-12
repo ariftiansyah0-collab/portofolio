@@ -18,12 +18,6 @@ const project = [
         liveURL: "#",
         githubURL: "#"
     },
-    {
-        title: "The MapleWood Tenant",
-        description: "Seorang mahasiswi bernama Sinta yang baru pindah ke daerah Norwood karena biaya hidup yang lebih murah. Setelah berbulan-bulan mencari tempat tinggal, ia akhirnya menemukan sebuah kontrakan dengan harga yang jauh di bawah pasaran.",
-        image: "/images/pv3.png",
-        tags: ["Unity", "SketchFab", "C#"],
-    }
 ]
 
 export default function ProjectSection() {
