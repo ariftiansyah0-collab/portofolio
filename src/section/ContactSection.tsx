@@ -13,12 +13,6 @@ const contactInfo = [
         href: "mailto:emanuel@example.com",
     },
     {
-        icon: LuPhone,
-        label: "Kontak",
-        value: "+62 895 0449 0059",
-        href: "tel:+234XXXXXXXXXX",
-    },
-    {
         icon: LuMapPin,
         label: "Jawa Timur, Kab Pasuruan",
         value: "Indonesian",

@@ -47,7 +47,7 @@ export default function Navbar() {
                     ))} 
                 </ul>
                 <div className="hidden lg:block">
-                    <LinkButton iconPosition="left" icon={LuDownload} text="download CV" rounded href="/documents/cv.pdf"/>
+                    <LinkButton iconPosition="left" icon={LuDownload} text="download CV" rounded href="/documents/cv (2).pdf"/>
                 </div>
                 <button
                     type="button"
@@ -56,7 +56,7 @@ export default function Navbar() {
                     onClick={() => setNavOpen((open) => !open)}
                     className="relative z-70 lg:hidden p-2 text-white hover:text-primary"
                 >
-                    {navOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}
+                    {navOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}k 
                 </button>
             </div>
         </nav>
