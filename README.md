@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Pengembangan Website Portofolio FAJRIELDEV
 
-## Getting Started
+## Ringkasan
 
-First, run the development server:
+Website ini merupakan pengembangan lanjutan dari project Profil Siswa pada Tugas 1 menggunakan **Next.js, React, dan Tailwind CSS**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Pada pengembangan ini ditambahkan styling menggunakan Tailwind CSS, beberapa komponen baru, halaman detail proyek menggunakan dynamic route berbasis **slug**, tampilan responsif, serta halaman 404 untuk menangani URL yang tidak ditemukan.
+
+## Fitur yang Ditambahkan
+
+### 1. Tailwind CSS
+
+Tailwind CSS digunakan untuk membuat tampilan website lebih modern dan responsif.
+
+Penerapannya meliputi:
+
+* Layout dan spacing.
+* Warna dan typography.
+* Card dan button.
+* Hover dan transition.
+* Responsive design untuk smartphone dan desktop.
+
+### 2. Komponen Baru
+
+Beberapa bagian website dibuat menjadi komponen di dalam folder `components/` agar kode lebih terstruktur dan dapat digunakan kembali.
+
+Contoh komponen:
+
+* `Navbar.tsx` — navigasi website.
+* `Footer.tsx` — bagian footer.
+* `ProjectCard.tsx` — menampilkan kartu proyek.
+* `SectionHeader.tsx` — menampilkan judul section.
+
+### 3. Dynamic Route Proyek
+
+Ditambahkan halaman detail proyek menggunakan **dynamic route** dengan parameter `[slug]`.
+
+Struktur file:
+
+```text
+src/app/proyek/[slug]/page.tsx
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Setiap proyek memiliki slug yang digunakan sebagai URL halaman detail.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contoh:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+localhost:3000/proyek/nextjs-v2
+localhost:3000/proyek/sistem-iventaris
+```
 
-## Learn More
+Slug digunakan untuk mencari data proyek yang sesuai dan menampilkan informasi seperti judul, gambar, deskripsi, teknologi, serta link project.
 
-To learn more about Next.js, take a look at the following resources:
+### 4. Halaman 404
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Jika pengguna mengakses slug proyek yang tidak tersedia, website akan menampilkan halaman **404 Not Found**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Contoh pengujian:
 
-## Deploy on Vercel
+```text
+localhost:3000/proyek/999
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 5. Pengujian Responsif
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Website diuji menggunakan **Chrome DevTools** pada ukuran layar smartphone **375px** untuk memastikan tampilan tetap rapi dan responsif pada perangkat mobile.
+
+**Screenshot pengujian:**
+
+```text
+![Responsive 375px](./public/screenshots/responsive-375.png)
+```
+
+### 6. Pengujian 404
+
+Pengujian dilakukan dengan mengakses URL proyek yang tidak tersedia:
+
+```text
+localhost:3000/proyek/999
+```
+
+Hasil pengujian menampilkan halaman 404.
+
+**Screenshot pengujian:**
+
+```text
+![404 Project](./public/screenshots/404.png)
+```
+
+## Kesimpulan
+
+Pengembangan ini membuat website Profil Siswa menjadi lebih **modern, responsif, terstruktur**, serta memiliki halaman detail proyek yang dinamis menggunakan **slug pada Next.js**.

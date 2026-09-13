@@ -28,7 +28,7 @@ export default function ExperienceSection() {
     return (
         <section id="experience" className="py-32 relative overflow-hidden text-primary">
             <div className="absolute top-1/2 left-1/4 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10"/>
-                <div className="container mx-auto px-6 relative z-10">
+                <div data-aos="fade-up" className="container mx-auto px-6 relative z-10">
                     <SectionHeader 
                     title="Pengalaman yang" 
                     highlight="sangat berarti" 
@@ -38,7 +38,7 @@ export default function ExperienceSection() {
                     />
 
                     <div className="relative mt-14">
-                        <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5
+                        <div data-aos="fade-up" data-aos-delay="200" className="absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5
                         bg-linear-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]"/>
                         <div className="space-y-12">
                             {experiences.map((exp,index) => (
@@ -49,7 +49,7 @@ export default function ExperienceSection() {
                                     </div>
                                     {/* content */}
                                     <div className={`pl-9 md:pl-0 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:col-start-2 md:pl-16"}`}>
-                                        <div className="p-6 rounded-2xl border border-primary/30 bg-card/70 hover:border-primary/50
+                                        <div data-aos="fade-up" data-aos-delay="300" className="p-6 rounded-2xl border border-primary/30 bg-card/70 hover:border-primary/50
                                         transition-all duration-500">
                                             <span className="text-primary text-sm font-medium">{exp.period}</span>
                                             <h3 className="mt-2 text-xl font-semibold text-text">{exp.role}</h3>

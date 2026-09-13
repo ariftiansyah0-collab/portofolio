@@ -9,10 +9,12 @@ import SectionHeader from "@/components/ui/SectionHeader";
 import ContactSection from "@/section/ContactSection";
 import Footer from "@/section/Footer";
 import { Toaster } from "react-hot-toast";
+import AnimationLayout from "@/components/layout/AnimationLayouts";
 
 export default function Home() {
   return (
-    <main>
+    <AnimationLayout>
+      <main>
       <Navbar/>
       <HeroSection/>
       <AboutSection />
@@ -21,6 +23,7 @@ export default function Home() {
       <ContactSection/>
       <Footer/>
       <Toaster/>
-    </main>
+      </main>
+    </AnimationLayout>
   );
 }

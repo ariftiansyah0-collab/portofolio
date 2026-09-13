@@ -46,9 +46,9 @@ export default function ContactSection() {
         setLoading(false);
     };
     return (
-        <section id="contact" className="py-24 relative overflow-hidden">
+        <section data-aos="fade-up" id="contact" className="py-24 relative overflow-hidden">
             <div className="w-[90%] max-w-6xl mx-auto relative z-10 space-y-16">
-                <div className="absolute top-1/3 right-1/4 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
+                <div data-aos="fade-up" data-aos-delay="200" className="absolute top-1/3 right-1/4 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
                 <SectionHeader
                     title="Mari kita ciptakan"
                     highlight="sesuatu yang hebat"

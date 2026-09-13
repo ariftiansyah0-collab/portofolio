@@ -1,8 +1,11 @@
+import { projek } from "@/app/data/projects";
 import Image from "next/image"
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { LuExternalLink, LuGithub } from "react-icons/lu";
 
 interface ProjectCardProps {
+    id:string,
     title:string,
     description:string,
     liveURL?:string,
@@ -11,9 +14,13 @@ interface ProjectCardProps {
     tags:string[]
 }
 
-export default function ProjectCard({title,description,liveURL,githubURL,image,tags}:ProjectCardProps) {
+export default function ProjectCard({id,title,description,liveURL,githubURL,image,tags}:ProjectCardProps) {
+    const router = useRouter();
+
     return (
-        <div className="rounded 2xl bg-surface border border-border transition-all
+        <div
+        onClick={() => router.push(`/projek/${id}`)}
+        className="rounded 2xl bg-surface border border-border transition-all
         duration-all duration-300
         hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
             {/* Image */}

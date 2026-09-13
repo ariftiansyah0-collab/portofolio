@@ -25,26 +25,26 @@ export default function HeroSection() {
             lg:grid-cols-2 gap-6 items-center">
                 {/* leftside */}
                 <div className="space-y-6">
-                    <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10
+                    <span data-aos="fade-up" className="inline-block px-4 py-1.5 rounded-full bg-primary/10
                     text-primary text-sm border border-border">Full Stack Developer ~ Spesialis Next.js
                     </span>
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-text">
+                    <h1 data-aos="fade-up" data-aos-delay="200" className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-text">
                        Membangun pengalaman web modern dengan <span className="text-primary">Clean Code</span>
                     </h1>
 
-                    <p className="text-gray-400 max-w-lg tracking-wide">
+                    <p data-aos="fade-up" data-aos-delay="300" className="text-gray-400 max-w-lg tracking-wide">
                         Merancang dan membangun aplikasi FullStack yang skalabel menggunakan teknologi modern seperti Next.js,
                          TypeScript, dan Supabase. Berfokus pada performa, antarmuka pengguna (UI) yang bersih, dan produk nyata.
                     </p>
 
-                    <div className="flex items-center gap-4 pt-2">
+                    <div className="flex items-center gap-4 pt-2" data-aos="fade-up" data-aos-delay="600">
                         <LinkButton text="Hubungi saya" href="#contact" rounded icon= 
                         {LuArrowRight}/>
                         <LinkButton text="Lihat Project saya" href="#projects" rounded variant="primary" />
                     </div>
                 </div>
                 {/* rightside */}
-                <div className="flex justify-center lg:justify-end">
+                <div data-aos="fade-left" data-aos-delay="400" className="flex justify-center lg:justify-end">
                     <div className="relative w-85 h-85 md:w-110 md:h-110
                         rounded-full surface/80 backdrop-blur-md overflow-hidden
                         border border-border flex items-center justify-center">

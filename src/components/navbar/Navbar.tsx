@@ -30,7 +30,7 @@ export default function Navbar() {
     }, [])
     return (
         <>
-        <nav className={`fixed top-0 left-0 w-full z-60 transition-all duration-300 ${scrolled ? "backdrop-blur-xl" : "bg-transparent"}`} >
+        <nav className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${scrolled ? "backdrop-blur-xl" : "bg-transparent"}`} >
             <div className="w-[95%] lg:w-[90%] mx-auto h-16 flex items-center
             justify-between">
                 <Logo />
@@ -56,7 +56,7 @@ export default function Navbar() {
                     onClick={() => setNavOpen((open) => !open)}
                     className="relative z-70 lg:hidden p-2 text-white hover:text-primary"
                 >
-                    {navOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />}k 
+                    {navOpen ? <LuX className="w-6 h-6" /> : <LuMenu className="w-6 h-6" />} 
                 </button>
             </div>
         </nav>
