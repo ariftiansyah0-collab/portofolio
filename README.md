@@ -2,92 +2,68 @@
 
 ## Ringkasan
 
-Website ini merupakan pengembangan lanjutan dari project Profil Siswa pada Tugas 1 menggunakan **Next.js, React, dan Tailwind CSS**.
+Website ini adalah pengembangan dari project Profil Siswa pada Tugas 1. Pada project ini saya menggunakan Next.js, React, dan Tailwind CSS.
 
-Pada pengembangan ini ditambahkan styling menggunakan Tailwind CSS, beberapa komponen baru, halaman detail proyek menggunakan dynamic route berbasis **slug**, tampilan responsif, serta halaman 404 untuk menangani URL yang tidak ditemukan.
+Beberapa bagian yang ditambahkan adalah tampilan dengan Tailwind CSS, beberapa komponen agar kode lebih rapi, halaman detail proyek menggunakan slug, tampilan yang bisa menyesuaikan ukuran layar, dan halaman 404 jika halaman yang dibuka tidak tersedia.
 
 ## Fitur yang Ditambahkan
 
 ### 1. Tailwind CSS
 
-Tailwind CSS digunakan untuk membuat tampilan website lebih modern dan responsif.
+Tailwind CSS digunakan untuk mengatur tampilan website supaya lebih menarik dan bisa menyesuaikan dengan ukuran layar.
 
-Penerapannya meliputi:
+Beberapa penggunaannya seperti:
 
-* Layout dan spacing.
-* Warna dan typography.
-* Card dan button.
-* Hover dan transition.
-* Responsive design untuk smartphone dan desktop.
+* Mengatur layout dan jarak antar bagian.
+* Mengatur warna dan tulisan.
+* Membuat card dan button.
+* Menambahkan efek hover dan transition.
+* Membuat tampilan untuk HP dan desktop.
 
 ### 2. Komponen Baru
 
-Beberapa bagian website dibuat menjadi komponen di dalam folder `components/` agar kode lebih terstruktur dan dapat digunakan kembali.
+Beberapa bagian website dibuat menjadi komponen sendiri di dalam folder `components/`. Tujuannya supaya kode lebih mudah diatur dan komponen yang sama bisa digunakan kembali.
 
-Contoh komponen:
+Contohnya:
 
-* `Navbar.tsx` — navigasi website.
-* `Footer.tsx` — bagian footer.
-* `ProjectCard.tsx` — menampilkan kartu proyek.
-* `SectionHeader.tsx` — menampilkan judul section.
+* `Navbar.tsx` untuk bagian menu navigasi.
+* `Footer.tsx` untuk bagian bawah website.
+* `ProjectCard.tsx` untuk menampilkan project.
+* `SectionHeader.tsx` untuk bagian judul setiap section.
 
 ### 3. Dynamic Route Proyek
 
-Ditambahkan halaman detail proyek menggunakan **dynamic route** dengan parameter `[slug]`.
+Pada website ini saya juga menambahkan halaman detail untuk setiap project menggunakan dynamic route `[slug]`.
 
-Struktur file:
+Struktur filenya:
 
 ```text
 src/app/proyek/[slug]/page.tsx
 ```
 
-Setiap proyek memiliki slug yang digunakan sebagai URL halaman detail.
+Setiap project mempunyai slug yang digunakan pada URL. Jadi, ketika slug yang dipilih sesuai dengan data project, halaman detail project akan ditampilkan.
 
-Contoh:
+Contohnya:
 
 ```text
 localhost:3000/proyek/nextjs-v2
 localhost:3000/proyek/sistem-iventaris
 ```
 
-Slug digunakan untuk mencari data proyek yang sesuai dan menampilkan informasi seperti judul, gambar, deskripsi, teknologi, serta link project.
+Di halaman detail tersebut terdapat beberapa informasi seperti judul project, gambar, deskripsi, teknologi yang digunakan, dan link project.
 
 ### 4. Halaman 404
 
-Jika pengguna mengakses slug proyek yang tidak tersedia, website akan menampilkan halaman **404 Not Found**.
+Saya juga menambahkan halaman 404 untuk menangani alamat atau slug yang tidak ditemukan.
 
-Contoh pengujian:
-
-```text
-localhost:3000/proyek/999
-```
-
-### 5. Pengujian Responsif
-
-Website diuji menggunakan **Chrome DevTools** pada ukuran layar smartphone **375px** untuk memastikan tampilan tetap rapi dan responsif pada perangkat mobile.
-
-**Screenshot pengujian:**
-
-```text
-![Responsive 375px](./public/screenshots/responsive-375.png)
-```
-
-### 6. Pengujian 404
-
-Pengujian dilakukan dengan mengakses URL proyek yang tidak tersedia:
+Misalnya ketika membuka:
 
 ```text
 localhost:3000/proyek/999
 ```
 
-Hasil pengujian menampilkan halaman 404.
-
-**Screenshot pengujian:**
-
-```text
-![404 Project](./public/screenshots/404.png)
-```
+Jika project dengan slug tersebut tidak ada, maka website akan menampilkan halaman **404 Not Found**.
 
 ## Kesimpulan
 
-Pengembangan ini membuat website Profil Siswa menjadi lebih **modern, responsif, terstruktur**, serta memiliki halaman detail proyek yang dinamis menggunakan **slug pada Next.js**.
+Dari pengembangan ini, website Profil Siswa menjadi lebih rapi dan menarik. Website juga sudah bisa menyesuaikan tampilan di berbagai ukuran layar. Selain itu, adanya dynamic route membuat setiap project bisa memiliki halaman detail sendiri berdasarkan slug yang digunakan.
