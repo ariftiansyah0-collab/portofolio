@@ -21,4 +21,14 @@ export const projek = [
         liveUrl: "https://contoh-domain.com",
         githubUrl: "https://github.com/username/nextjs-v2",
     },
+    {
+        id: "portofolio-website",
+        title: "Portofolio",
+        description: "Portofolio pribadi yang menampilkan keahlian sebagai Full Stack Developer dengan spesialisasi Next.js. Dibangun dengan Next.js, TypeScript, dan Supabase, situs ini menyoroti fokus pada clean code, performa aplikasi, dan pengalaman pengguna yang mulus.",
+        images: "/images/pv4.png",
+        detail: "Portofolio ini menampilkan beberapa proyek unggulan, seperti Latihan Next.js v2 (eksplorasi image optimization, dashboard analitik, dan integrasi database) dan Peminjaman Barang (sistem manajemen inventaris berbasis web). Bagian pengalaman menggambarkan perjalanan dari belajar fundamental web development secara otodidak sejak 2025, hingga kini aktif mengembangkan aplikasi fullstack production-ready serta merambah game development dengan Unity dan C#.",
+
+        liveUrl: "https://contoh-domain.com",
+        githubUrl: "https://github.com/username/portofolio"
+    },
 ]
