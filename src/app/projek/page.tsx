@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { projek } from "../data/projects";
+import CardProyek from "@/components/project/ProjectCard";
+import { supabase } from '@/lib/supabase';
 
 interface Project {
   id: string;

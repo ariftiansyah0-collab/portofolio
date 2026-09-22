@@ -1,3 +1,5 @@
+import { MdDescription } from "react-icons/md";
+
 export const projek = [
     {
         id: "nextjs-v2",
@@ -9,7 +11,7 @@ export const projek = [
         liveUrl: "https://contoh-domain.com",
         githubUrl: "https://github.com/username/nextjs-v2",
     },
-        {
+    {
         id: "sistem-iventaris",
         title:"Peminjaman Barang",
         description: "Playground Next.js untuk eksplorasi image optimization, dashboard analitik, dan integrasi database (Supabase & Realtime) — sebagai sarana memperdalam ekosistem Next.js.Sistem peminjaman barang berbasis web yang dirancang untuk membantu mengelola proses inventaris dan peminjaman barang secara lebih terstruktur.",
