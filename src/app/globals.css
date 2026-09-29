@@ -1,26 +1,21 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary:#123499;
-  --color-background:#0f1418;
-  --color-card:#141a1f;
-  --color-border:#242b32;
-  --color-surface:#1a2329;
-  --color-text:#f0f2f5;
-}   
+  --color-primary: #123499;
+  --color-background: #0f1418;
+  --color-card: #141a1f;
+  --color-border: #242b32;
+  --color-surface: #1a2329;
+  --color-text: #f0f2f5;
+}
 
 body {
   background-color: var(--color-background);
 }
 
-.aurora-container {
-  width: 100%;
-  height: 100%;
-}
-
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-

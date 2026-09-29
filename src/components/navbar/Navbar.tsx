@@ -31,16 +31,14 @@ export default function Navbar() {
     return (
         <>
         <nav className={`fixed top-0 left-0 w-full z-100 transition-all duration-300 ${scrolled ? "backdrop-blur-xl" : "bg-transparent"}`} >
-            <div className="w-[95%] lg:w-[90%] mx-auto h-16 flex items-center
-            justify-between">
+            <div className="w-[95%] lg:w-[90%] mx-auto h-16 flex items-center justify-between">
                 <Logo />
                 {/* Desktop Nav */}
                 <ul className="hidden lg:flex items-center gap-1 py-2.5 px-1
                 rounded-full bg-surface/60 backdrop-blur-xl border border-border text-text">
                     {navLinks.map((link, index) => (
                         <li key={index}>
-                            <Link href={link.href} className="px-4 py-2 rounded-full text-sm 
-                            font-medium text-gray-300 transition-all duration-300 hover:text-primary hover:bg-surface">
+                            <Link href={link.href} className="px-4 py-2 rounded-full text-sm font-medium text-gray-300 transition-all duration-300 hover:text-primary hover:bg-surface">
                                 {link.label}
                             </Link>
                         </li>

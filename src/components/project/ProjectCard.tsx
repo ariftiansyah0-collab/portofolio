@@ -1,7 +1,6 @@
 import { projek } from "@/app/data/projects";
 import Image from "next/image"
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { LuExternalLink, LuGithub } from "react-icons/lu";
 
 interface ProjectCardProps {
@@ -15,11 +14,10 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({id,title,description,liveURL,githubURL,image,tags}:ProjectCardProps) {
-    const router = useRouter();
 
     return (
-        <div
-        onClick={() => router.push(`/projek/${id}`)}
+        <Link
+        href={`/projek/${id}`}
         className="rounded 2xl bg-surface border border-border transition-all
         duration-all duration-300
         hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg">
@@ -42,12 +40,11 @@ export default function ProjectCard({id,title,description,liveURL,githubURL,imag
                 </p>
 
                 <div className="flex flex-wrap gap-2">
-                    {tags.map((tag) => (
-                        <span key={tag} 
-                        className="text-xs px-2.5 py-1
-                        rounded-md bg-primary/10 text-primary border
-                        border-border">{tag}</span>
-                    ))}
+                    
+                    <span 
+                    className="text-xs px-2.5 py-1
+                    rounded-md bg-primary/10 text-primary border
+                    border-border">{tags}</span>
                 </div>
                 {/*Links */}
                 <div className="flex items-center gap-4 pt-3">
@@ -67,6 +64,6 @@ export default function ProjectCard({id,title,description,liveURL,githubURL,imag
                     )}
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

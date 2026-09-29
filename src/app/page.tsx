@@ -1,5 +1,3 @@
-"use client"
-
 import HeroSection from "@/section/HeroSection";
 import AboutSection from "@/section/AboutSection";
 import Navbar from "../components/navbar/Navbar";

@@ -1,35 +1,56 @@
-import ProjectCard from "@/components/project/ProjectCard"
-import SectionHeader from "@/components/ui/SectionHeader"
+import ProjectCard from "@/components/project/ProjectCard";
+import SectionHeader from "@/components/ui/SectionHeader";
 import Link from "next/link";
-import { projek } from "@/app/data/projects";
+import { supabase } from "@/lib/supabase";
 
-export default function ProjectSection() {
+export default async function ProjectSection() {
+    const { data: projek, error } = await supabase
+        .from("proyek")
+        .select("*")
+        .order("id", { ascending: true });
+
+        console.log("DATA PROJEK:", projek);
+        console.log("ERROR:", error);
+
+    if (error) {
+        return (
+            <p className="text-red-600">
+                Gagal memuat data: {error.message}
+            </p>
+        );
+    }
+
     return (
         <section id="projects" className="py-24 relative text-white">
-            <div data-aos="fade-up" className="w-[90%] max-w-6xl mx-auto space-y-12">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10"
-                />
-                <SectionHeader 
+            <div
+                data-aos="fade-up"
+                className="w-[90%] max-w-6xl mx-auto space-y-12"
+            >
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
+
+                <SectionHeader
                     title="Beberapa karya terbaru"
                     highlight="saya"
                     badge="projects"
                     description="Pilihan proyek yang menampilkan kemampuan saya dalam merancang,
-                            membangun, dan mengembangkan skala aplikasi full-stack modern." />
+                    membangun, dan mengembangkan skala aplikasi full-stack modern."
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-                    {projek.map((item) => (
+                    {projek?.map((item) => (
                         <ProjectCard
                             key={item.id}
                             id={item.id}
-                            title={item.title}
-                            description={item.description}
-                            image={item.images}
-                            tags={["Next.js", "Typescript", "Supabase"]}
+                            title={item.judul}
+                            description={item.deskripsi}
+                            image={item.gambar}
+                            tags={item.teknologi}
                             liveURL={item.liveUrl}
-                            githubURL={item.githubUrl}
+                            githubURL={item.githubURL}
                         />
                     ))}
                 </div>
+
                 <div className="flex justify-center">
                     <Link
                         href="/projek"
@@ -42,5 +63,5 @@ export default function ProjectSection() {
                 </div>
             </div>
         </section>
-    )
+    );
 }

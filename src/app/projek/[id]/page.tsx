@@ -1,8 +1,7 @@
 import Image from "next/image"
-import Link from "next/link"
 import { notFound } from "next/navigation"
-import { projek} from "../../data/projects"
 import BackButton from "@/components/ui/BackButton";
+import { supabase } from "@/lib/supabase";
 
 type Props = {
   params: Promise<{
@@ -11,26 +10,32 @@ type Props = {
 }
 
 type Project = {
-  id: string
-  title: string
-  description: string
-  images: string
-  detail: string
-  liveUrl: string
-  githubUrl: string
-  tech?: string[]
+  id: number
+  judul: string
+  deskripsi: string
+  gambar: string
+  detail?: string
+  liveUrl?: string | null
+  githubUrl?: string | null
+  teknologi?: string | string[]
 }
 
 export default async function ProjectPage({ params }: Props) {
   const { id } = await params
 
-  const project = projek.find(
-    (item: { id: string }) => item.id === id
-  ) as Project | undefined
+  const { data: project, error } = await supabase
+    .from("proyek")
+    .select("*")
+    .eq("id", id)
+    .maybeSingle<Project>()
 
-  if (!project) {
+  if (error || !project) {
     notFound()
   }
+
+  const technologies = Array.isArray(project.teknologi)
+    ? project.teknologi
+    : project.teknologi?.split(/\s*-\s*|,\s*/) ?? []
 
   return (
     <main className="min-h-screen bg-gray text-white">
@@ -39,14 +44,14 @@ export default async function ProjectPage({ params }: Props) {
           <BackButton />
         </div>
         <div data-aos="fade" data-aos-delay="200" className="mb-10 max-w-3xl">
-            <h1 className="mb-5 text-4xl font-bold tracking-tight md:text-6xl">{project.title}</h1>
-          <p className="text-lg leading-relaxed text-zinc-400">{project.description}</p>
+            <h1 className="mb-5 text-4xl font-bold tracking-tight md:text-6xl">{project.judul}</h1>
+          <p className="text-lg leading-relaxed text-zinc-400">{project.deskripsi}</p>
         </div>
 
         <div data-aos="fade" data-aos-delay="300" className="relative mb-12 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
           <Image
-            src={project.images}
-            alt={project.title}
+            src={project.gambar}
+            alt={project.judul}
             width={1400}
             height={800}
             className="h-auto w-full object-cover"
@@ -62,7 +67,7 @@ export default async function ProjectPage({ params }: Props) {
             </h2>
 
             <p className="leading-8 text-zinc-600">
-              {project.detail}
+              {project.detail ?? project.deskripsi}
             </p>
           </section>
 
@@ -73,7 +78,7 @@ export default async function ProjectPage({ params }: Props) {
             </h2>
 
             <div className="mb-8 flex flex-wrap gap-2">
-              {project.tech?.map((tech) => (
+              {technologies.map((tech) => (
                 <span
                   key={tech}
                   className="rounded-full border border-zinc-700 px-3 py-1.5 text-sm text-zinc-300"
@@ -86,18 +91,18 @@ export default async function ProjectPage({ params }: Props) {
             {/* Buttons */}
             <div data-aos="fade" data-aos-delay="800" className="flex flex-col gap-3">
               <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={project.liveUrl ?? "#"}
+                target={project.liveUrl ? "_blank" : undefined}
+                rel={project.liveUrl ? "noopener noreferrer" : undefined}
                 className="rounded-xl bg-primary px-5 py-3 text-center font-medium text-white transition hover:bg-primary/90"
               >
-                Live Demo 
+                Live Demo
               </a>
 
               <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={project.githubUrl ?? "#"}
+                target={project.githubUrl ? "_blank" : undefined}
+                rel={project.githubUrl ? "noopener noreferrer" : undefined}
                 className="rounded-xl border border-zinc-700 px-5 py-3 text-center text-white font-medium transition hover:text-primary"
               >
                 View on GitHub

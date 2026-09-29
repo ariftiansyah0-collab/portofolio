@@ -1,20 +1,24 @@
 import Link from "next/link";
 import Image from "next/image";
-import { projek } from "../data/projects";
-import CardProyek from "@/components/project/ProjectCard";
 import { supabase } from '@/lib/supabase';
 
 interface Project {
-  id: string;
-  title: string;
-  description: string;
-  images: string;
-  detail: string;
-  liveUrl: string;
-  githubUrl: string;
+  id: number;
+  judul: string;
+  deskripsi: string;
+  gambar: string;
 }
 
-export default function ProjekPage() {
+export default async function ProjekPage() {
+  const { data: projek, error } = await supabase
+    .from("proyek")
+    .select("id, judul, deskripsi, gambar")
+    .order("id", { ascending: true });
+
+  if (error) {
+    return <p className="px-6 py-10 text-red-600">Gagal memuat data: {error.message}</p>;
+  }
+
   return (
     <main className="max-w-6xl mx-auto px-6 py-10 text-white">
         <div data-aos="fade" className="flex justify-between mb-10 max-w-3xl">
@@ -31,7 +35,7 @@ export default function ProjekPage() {
       </p>
 
       <div data-aos="fade" data-aos-delay="400" className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-        {projek.map((project: Project) => (
+        {projek?.map((project: Project) => (
           <Link
             key={project.id}
             href={`/projek/${project.id}`}
@@ -41,16 +45,16 @@ export default function ProjekPage() {
           >
             <div className="relative w-full h-48">
               <Image
-                src={project.images}
-                alt={project.title}
+                src={project.gambar}
+                alt={project.judul}
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
             </div>
             <div className="p-4">
-              <h2 className="text-lg font-semibold mb-2">{project.title}</h2>
+              <h2 className="text-lg font-semibold mb-2">{project.judul}</h2>
               <p className="text-sm text-gray-400 line-clamp-2">
-                {project.description}
+                {project.deskripsi}
               </p>
             </div>
           </Link>
