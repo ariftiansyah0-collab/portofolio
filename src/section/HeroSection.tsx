@@ -41,7 +41,7 @@ export default function HeroSection() {
                         <LinkButton text="Hubungi saya" href="#contact" rounded icon= 
                         {LuArrowRight}/>
                         <LinkButton text="Lihat Project saya" href="#projects" rounded variant="primary" />
-                    </div>
+                    </div>~
                 </div>
                 {/* rightside */}
                 <div data-aos="fade-left" data-aos-delay="400" className="flex justify-center lg:justify-end">
@@ -49,7 +49,7 @@ export default function HeroSection() {
                         rounded-full surface/80 backdrop-blur-md overflow-hidden
                         border border-border flex items-center justify-center">
                         {/* Image glow */}
-                        <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl"/>
+                        <div className="absolute inset-0 rounded-full bg-primary/10 blur-3xl"/>
                         <Image fill src="/images/about.jpeg" alt="profile" className="z-20 rounded-full object-cover"/>
                     </div>
                 </div>
