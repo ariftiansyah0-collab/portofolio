@@ -24,9 +24,10 @@ export default async function AdminLoginPage({
         }) {
             const params = await searchParams;
             const key = params.key;
+            const adminDoorpass = process.env.ADMIN_DOORPASS;
 
             // Cek doorpass
-            if (key !== process.env.ADMIN_DOORPASS) {
+            if (!adminDoorpass || key !== adminDoorpass) {
                 return (
                     <main className="min-h-screen bg-background text-white flex items-center justify-center px-4">
                         <div className="w-full max-w-md rounded-2xl border border-border bg-card p-8 text-center">
@@ -38,7 +39,7 @@ export default async function AdminLoginPage({
                             </h1>
 
                             <p className="mt-2 text-sm text-gray-400">
-                                Password akses admin tidak valid.
+                                Doorpass tidak valid atau belum dikonfigurasi di server.
                             </p>
                         </div>
                     </main>
