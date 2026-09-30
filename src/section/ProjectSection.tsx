@@ -45,7 +45,7 @@ export default async function ProjectSection() {
                             description={item.deskripsi}
                             image={item.gambar}
                             tags={item.teknologi}
-                            liveURL={item.liveUrl}
+                            liveURL={item.link}
                             githubURL={item.githubURL}
                         />
                     ))}

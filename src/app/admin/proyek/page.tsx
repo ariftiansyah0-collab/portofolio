@@ -90,6 +90,7 @@ async function tambahProyekAction(formData: FormData) {
     }
     revalidatePath('/admin/proyek');
     revalidatePath('/proyek');
+    revalidatePath('/');
 }
 
 async function hapusProyekAction(formData: FormData) {
@@ -108,6 +109,7 @@ async function hapusProyekAction(formData: FormData) {
 
     revalidatePath('/admin/proyek');
     revalidatePath('/proyek');
+    revalidatePath('/');
     redirect('/admin/proyek');
 }
 
@@ -160,6 +162,7 @@ async function editProyekAction(formData: FormData) {
     }
     revalidatePath('/admin/proyek');
     revalidatePath('/proyek');
+    revalidatePath('/');
     redirect('/admin/proyek');
 }
 
