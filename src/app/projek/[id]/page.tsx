@@ -2,11 +2,33 @@ import Image from "next/image"
 import { notFound } from "next/navigation"
 import BackButton from "@/components/ui/BackButton";
 import { supabase } from "@/lib/supabase";
+import type { Metadata } from 'next';
+
 
 type Props = {
   params: Promise<{
     id: string
   }>
+}
+
+interface DetailProps {
+  params: Promise<{ id: string }> }
+
+export async function generateMetadata({ params }: DetailProps): Promise<Metadata> {
+  const { id } = await params;
+  const { data: proyek } = await supabase.from('proyek').select('judul, deskripsi').eq('id', id).single();
+
+ if (!proyek) {
+    return { title: 'Proyek Tidak Ditemukan' };
+  }
+  return {
+      title: proyek.judul,
+      description: proyek.deskripsi,
+      openGraph: {
+      title: proyek.judul,
+      description: proyek.deskripsi,
+    },
+  };
 }
 
 type Project = {
@@ -44,7 +66,7 @@ export default async function ProjectPage({ params }: Props) {
           <BackButton />
         </div>
         <div data-aos="fade" data-aos-delay="200" className="mb-10 max-w-3xl">
-            <h1 className="mb-5 text-4xl font-bold tracking-tight md:text-6xl">{project.judul}</h1>
+          <h1 className="mb-5 text-4xl font-bold tracking-tight md:text-6xl">{project.judul}</h1>
           <p className="text-lg leading-relaxed text-zinc-400">{project.deskripsi}</p>
         </div>
 

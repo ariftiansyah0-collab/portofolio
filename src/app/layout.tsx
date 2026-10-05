@@ -5,16 +5,35 @@ import Navbar from "../components/navbar/Navbar";
 import Logo from "../components/navbar/Logo";
 
 const poppins = Poppins({
-  variable:"--font-poppins",
+  variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400","500","600","700","800","900"],
-})
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
-  title: "NextDev",
-  description: "NextDev tutorial Egbontech",
+  metadataBase: new URL("https://portofolio-orpin-xi.vercel.app/"),
+
+  title: {
+    default: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
+    template: "%s | FAJRIEL ARIFTIANSYAH",
+  },
+
+  description:
+    "Portofolio siswa SMK Rekayasa Perangkat Lunak, dibangun dengan Next.js dan Supabase.",
+
+  openGraph: {
+    title: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
+    description:
+      "Portofolio siswa SMK Rekayasa Perangkat Lunak, dibangun dengan Next.js dan Supabase.",
+    type: "website",
+  },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html
       lang="en"
@@ -26,3 +45,4 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     </html>
   );
 }
+
