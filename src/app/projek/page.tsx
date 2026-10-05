@@ -21,7 +21,7 @@ export default async function ProjekPage() {
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-10 text-white">
-        <div data-aos="fade" className="flex justify-between mb-10 max-w-3xl">
+        <div className="flex justify-between mb-10 max-w-3xl">
           <Link 
           href="/#projects"
           className="px-8 py-3 rounded-full bg-primary text-gray-200 font-medium hover:opacity-90 transition 
@@ -29,12 +29,12 @@ export default async function ProjekPage() {
             ← Kembali
           </Link>
         </div>
-      <h1 data-aos="fade" data-aos-delay="200" className="text-4xl font-bold mb-4">Projek Saya</h1>
-      <p data-aos="fade" data-aos-delay="300" className="text-gray-400 mb-10 max-w-2xl">
+      <h1 className="text-4xl font-bold mb-4">Projek Saya</h1>
+      <p className="text-gray-400 mb-10 max-w-2xl">
         Kumpulan project yang pernah saya buat sebagai sarana belajar dan eksplorasi.
       </p>
 
-      <div data-aos="fade" data-aos-delay="400" className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
         {projek?.map((project: Project) => (
           <Link
             key={project.id}

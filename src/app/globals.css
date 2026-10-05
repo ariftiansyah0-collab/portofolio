@@ -19,3 +19,19 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.scroll-reveal {
+  animation: scrollReveal 700ms ease-out both;
+}
+
+@keyframes scrollReveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -22,10 +22,7 @@ export default async function ProjectSection() {
 
     return (
         <section id="projects" className="py-24 relative text-white">
-            <div
-                data-aos="fade-up"
-                className="w-[90%] max-w-6xl mx-auto space-y-12"
-            >
+            <div className="w-[90%] max-w-6xl mx-auto space-y-12">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10" />
 
                 <SectionHeader

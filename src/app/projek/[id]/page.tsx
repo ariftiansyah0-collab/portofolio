@@ -62,15 +62,15 @@ export default async function ProjectPage({ params }: Props) {
   return (
     <main className="min-h-screen bg-gray text-white">
       <div className="mx-auto max-w-6xl px-6 py-16">
-        <div data-aos="fade" className="flex justify-between mb-10 max-w-3xl">
+        <div className="flex justify-between mb-10 max-w-3xl">
           <BackButton />
         </div>
-        <div data-aos="fade" data-aos-delay="200" className="mb-10 max-w-3xl">
+        <div className="mb-10 max-w-3xl">
           <h1 className="mb-5 text-4xl font-bold tracking-tight md:text-6xl">{project.judul}</h1>
           <p className="text-lg leading-relaxed text-zinc-400">{project.deskripsi}</p>
         </div>
 
-        <div data-aos="fade" data-aos-delay="300" className="relative mb-12 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
+        <div className="relative mb-12 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
           <Image
             src={project.gambar}
             alt={project.judul}
@@ -81,11 +81,11 @@ export default async function ProjectPage({ params }: Props) {
         </div>
 
         {/* Content */}
-        <div data-aos="fade" data-aos-delay="400" className="grid gap-12 md:grid-cols-[1fr_300px] hover:bg-auto">
+        <div className="grid gap-12 md:grid-cols-[1fr_300px] hover:bg-auto">
 
           {/* Description */}
           <section>
-            <h2 data-aos="fade" data-aos-delay="500" className="mb-4 text-2xl font-semibold">Deskripsi
+            <h2 className="mb-4 text-2xl font-semibold">Deskripsi
             </h2>
 
             <p className="leading-8 text-zinc-600">
@@ -95,7 +95,7 @@ export default async function ProjectPage({ params }: Props) {
 
           {/* Sidebar */}
           <aside>
-            <h2 data-aos="fade" data-aos-delay="700" className="mb-4 text-xl font-semibold">
+            <h2 className="mb-4 text-xl font-semibold">
               Teknologi
             </h2>
 
@@ -111,7 +111,7 @@ export default async function ProjectPage({ params }: Props) {
             </div>
 
             {/* Buttons */}
-            <div data-aos="fade" data-aos-delay="800" className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3">
               <a
                 href={project.liveUrl ?? "#"}
                 target={project.liveUrl ? "_blank" : undefined}
