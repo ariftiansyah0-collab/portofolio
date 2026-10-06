@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     locale: "id_ID",
     images: [
       {
-        url: "/images/opengraph.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
     description:
       "Portofolio siswa SMK Rekayasa Perangkat Lunak, dibangun dengan Next.js dan Supabase.",
-    images: ["/images/opengraph.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 
