@@ -11,7 +11,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portofolio-orpin-xi.vercel.app/"),
+  metadataBase: new URL("https://www.fajrielariftiansyah.my.id"),
 
   title: {
     default: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
@@ -25,7 +25,10 @@ export const metadata: Metadata = {
     title: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
     description:
       "Portofolio siswa SMK Rekayasa Perangkat Lunak, dibangun dengan Next.js dan Supabase.",
+    url: "/",
+    siteName: "FAJRIEL ARIFTIANSYAH",
     type: "website",
+    locale: "id_ID",
     images: [
       {
         url: "/images/opengraph.jpg",
@@ -34,6 +37,14 @@ export const metadata: Metadata = {
         alt: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
       },
     ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio",
+    description:
+      "Portofolio siswa SMK Rekayasa Perangkat Lunak, dibangun dengan Next.js dan Supabase.",
+    images: ["/images/opengraph.jpg"],
   },
 };
 
@@ -44,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="en"
+      lang="id"
       className={`${poppins.className} h-full antialiased scroll-smooth`}
     >
       <body className="flex-1 w-full flex flex-col text-white px-6">

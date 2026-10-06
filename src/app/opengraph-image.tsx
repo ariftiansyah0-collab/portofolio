@@ -1,7 +1,8 @@
 import { ImageResponse } from 'next/og';
 
 export const size = { width: 1200, height: 630 };
-export const contentType = 'images/opengraph.jpg';
+export const contentType = 'image/png';
+export const alt = 'FAJRIEL ARIFTIANSYAH - Portfolio';
 
 export default async function Image() {
     return new ImageResponse(
@@ -19,7 +20,7 @@ export default async function Image() {
                 fontWeight: 700,
                 }}
                 >
-                Nama Kalian - Portfolio
+                FAJRIEL ARIFTIANSYAH - Portfolio
             </div>
             ),
         { ...size }
