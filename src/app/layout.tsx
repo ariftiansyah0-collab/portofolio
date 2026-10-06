@@ -55,7 +55,7 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="id"
+      lang="id" 
       className={`${poppins.className} h-full antialiased scroll-smooth`}
     >
       <body className="flex-1 w-full flex flex-col text-white px-6">
