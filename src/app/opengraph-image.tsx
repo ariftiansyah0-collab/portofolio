@@ -1,67 +1,20 @@
-
-// app/opengraph-image.tsx
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
 export const alt = "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio";
+
 export const size = {
   width: 1200,
   height: 630,
 };
+
 export const contentType = "image/png";
 
 export default async function Image() {
-  const [heading, mono] = await Promise.all([
-    fetch(
-      "https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-700-normal.woff"
-    ).then((res) => res.arrayBuffer()),
-
-    fetch(
-      "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-500-normal.woff"
-    ).then((res) => res.arrayBuffer()),
-  ]);
-
-  const corner = (
-    position: Record<string, number>,
-    borders: Record<string, string>
-  ) => (
-    <div
-      style={{
-        position: "absolute",
-        width: 28,
-        height: 28,
-        display: "flex",
-        ...position,
-        ...borders,
-      }}
-    />
-  );
-
-  const line = "1px solid #3a3a3a";
-
-  const ring = (diameter: number, opacity: number) => (
-    <div
-      style={{
-        position: "absolute",
-        width: diameter,
-        height: diameter,
-        borderRadius: 9999,
-        border: `1px solid rgba(255,255,255,${opacity})`,
-        display: "flex",
-      }}
-    />
-  );
-
-  const sideLabel = {
-    display: "flex",
-    flexDirection: "column" as const,
-    gap: 10,
-    fontFamily: "JetBrains Mono",
-    fontSize: 20,
-    letterSpacing: 3,
-    color: "#6b6b6b",
-  };
+  const font = await fetch(
+    "https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-700-normal.woff"
+  ).then((res) => res.arrayBuffer());
 
   return new ImageResponse(
     (
@@ -70,239 +23,137 @@ export default async function Image() {
           width: "100%",
           height: "100%",
           display: "flex",
-          alignItems: "center",
+          flexDirection: "column",
           justifyContent: "center",
-          background: "#050505",
+          padding: "70px 80px",
           position: "relative",
           overflow: "hidden",
+          background: "#0b0f14",
+          color: "#ffffff",
+          fontFamily: "Space Grotesk",
         }}
       >
-        {/* GRID */}
+        {/* AURORA / GRADIENT */}
         <div
           style={{
             position: "absolute",
-            inset: 0,
+            width: 700,
+            height: 700,
+            top: -400,
+            right: -100,
+            borderRadius: 9999,
+            background:
+              "radial-gradient(circle, rgba(37,99,235,0.35), rgba(37,99,235,0) 70%)",
             display: "flex",
-            backgroundImage:
-              "linear-gradient(to right, #161616 1px, transparent 1px), linear-gradient(to bottom, #161616 1px, transparent 1px)",
-            backgroundSize: "48px 48px",
-            backgroundPosition: "center center",
           }}
         />
 
-        {/* GRID FADE */}
         <div
           style={{
             position: "absolute",
-            inset: 0,
-            display: "flex",
-            backgroundImage:
-              "radial-gradient(ellipse at center, rgba(5,5,5,0) 0%, rgba(5,5,5,0.7) 60%, #050505 100%)",
-          }}
-        />
-
-        {/* TOP SPOTLIGHT */}
-        <div
-          style={{
-            position: "absolute",
-            top: -260,
-            width: 900,
+            width: 600,
             height: 600,
+            bottom: -400,
+            left: -150,
+            borderRadius: 9999,
+            background:
+              "radial-gradient(circle, rgba(124,58,237,0.28), rgba(124,58,237,0) 70%)",
             display: "flex",
-            backgroundImage:
-              "radial-gradient(ellipse at center, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0) 70%)",
           }}
         />
 
-        {/* ORBIT RINGS */}
-        {ring(420, 0.1)}
-        {ring(640, 0.06)}
-        {ring(860, 0.035)}
-
-        {/* CORNER MARKS */}
-        {corner(
-          { top: 36, left: 36 },
-          { borderTop: line, borderLeft: line }
-        )}
-
-        {corner(
-          { top: 36, right: 36 },
-          { borderTop: line, borderRight: line }
-        )}
-
-        {corner(
-          { bottom: 36, left: 36 },
-          { borderBottom: line, borderLeft: line }
-        )}
-
-        {corner(
-          { bottom: 36, right: 36 },
-          { borderBottom: line, borderRight: line }
-        )}
-
-        {/* LEFT LABEL */}
+        {/* TOP BRAND */}
         <div
           style={{
-            ...sideLabel,
-            position: "absolute",
-            left: 72,
-            top: 258,
-          }}
-        >
-          <span style={{ color: "#ffffff" }}>01</span>
-
-          <div
-            style={{
-              width: 36,
-              height: 1,
-              background: "#3a3a3a",
-              display: "flex",
-            }}
-          />
-
-          <span>PORTFOLIO</span>
-        </div>
-
-        {/* RIGHT LABEL */}
-        <div
-          style={{
-            ...sideLabel,
-            position: "absolute",
-            right: 72,
-            top: 258,
-            alignItems: "flex-end",
+            display: "flex",
+            alignItems: "center",
+            gap: 14,
+            fontSize: 24,
+            color: "#9ca3af",
+            letterSpacing: 1,
           }}
         >
           <div
             style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 10,
-              color: "#ffffff",
-            }}
-          >
-            <div
-              style={{
-                width: 10,
-                height: 10,
-                borderRadius: 9999,
-                background: "#22c55e",
-                display: "flex",
-              }}
-            />
-
-            <span>OPEN</span>
-          </div>
-
-          <div
-            style={{
-              width: 36,
-              height: 1,
-              background: "#3a3a3a",
+              width: 12,
+              height: 12,
+              borderRadius: 9999,
+              background: "#3b82f6",
               display: "flex",
             }}
           />
 
-          <span>TO WORK</span>
+          FAJRIELDEV
         </div>
 
-        {/* MAIN CONTENT */}
+        {/* MAIN */}
         <div
           style={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
-            position: "relative",
+            marginTop: 45,
           }}
         >
-          {/* NAME */}
           <div
             style={{
               display: "flex",
-              fontFamily: "Space Grotesk",
-              fontSize: 92,
+              fontSize: 72,
               fontWeight: 700,
-              letterSpacing: -4,
-              lineHeight: 1,
-              color: "#ffffff",
+              lineHeight: 1.05,
+              letterSpacing: -2,
             }}
           >
-            FAJRIEL
+            FAJRIEL ARIFTIANSYAH
           </div>
 
           <div
             style={{
               display: "flex",
-              fontFamily: "Space Grotesk",
-              fontSize: 92,
+              marginTop: 22,
+              fontSize: 32,
+              color: "#60a5fa",
               fontWeight: 700,
-              letterSpacing: -4,
-              lineHeight: 1,
-              color: "#ffffff",
-              marginTop: 4,
             }}
           >
-            ARIFTIANSYAH
+            Full Stack Web Developer
           </div>
 
-          {/* ROLE */}
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              gap: 14,
-              marginTop: 36,
-              padding: "14px 30px",
-              borderRadius: 9999,
-              border: "1px solid #2e2e2e",
-              background: "rgba(255,255,255,0.04)",
-              fontFamily: "JetBrains Mono",
-              fontSize: 26,
-              color: "#d4d4d4",
-              letterSpacing: 1,
+              marginTop: 24,
+              maxWidth: 850,
+              fontSize: 24,
+              lineHeight: 1.5,
+              color: "#9ca3af",
             }}
           >
-            <span
-              style={{
-                width: 10,
-                height: 10,
-                borderRadius: 9999,
-                background: "#22c55e",
-                display: "flex",
-              }}
-            />
-
-            <span>Full Stack Web Developer</span>
-          </div>
-
-          {/* SUBTITLE */}
-          <div
-            style={{
-              display: "flex",
-              marginTop: 30,
-              fontFamily: "JetBrains Mono",
-              fontSize: 20,
-              letterSpacing: 8,
-              color: "#555555",
-            }}
-          >
-            SOFTWARE ENGINEER
+            Website profil dan portfolio siswa SMK Rekayasa Perangkat Lunak,
+            dibangun dengan Next.js, React, Tailwind CSS, dan Supabase.
           </div>
         </div>
 
-        {/* BOTTOM INFO */}
+        {/* BOTTOM */}
         <div
           style={{
             position: "absolute",
-            bottom: 34,
+            left: 80,
+            right: 80,
+            bottom: 55,
             display: "flex",
-            fontFamily: "JetBrains Mono",
-            fontSize: 16,
-            letterSpacing: 3,
-            color: "#444444",
+            justifyContent: "space-between",
+            alignItems: "center",
+            borderTop: "1px solid #252b33",
+            paddingTop: 22,
+            fontSize: 20,
+            color: "#6b7280",
           }}
         >
-          FAJRIELARIFTIANSYAH.MY.ID
+          <span>PORTFOLIO • PROFILE • PROJECTS</span>
+
+          <span style={{ color: "#d1d5db" }}>
+            www.fajrielariftiansyah.my.id
+          </span>
         </div>
       </div>
     ),
@@ -311,14 +162,8 @@ export default async function Image() {
       fonts: [
         {
           name: "Space Grotesk",
-          data: heading,
+          data: font,
           weight: 700,
-          style: "normal",
-        },
-        {
-          name: "JetBrains Mono",
-          data: mono,
-          weight: 500,
           style: "normal",
         },
       ],
