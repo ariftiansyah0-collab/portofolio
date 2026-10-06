@@ -1,46 +1,53 @@
+
 // app/opengraph-image.tsx
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
 
 export const alt = "FAJRIEL ARIFTIANSYAH - Website Profil & Portfolio";
-export const size = { width: 1200, height: 630 };
+export const size = {
+  width: 1200,
+  height: 630,
+};
 export const contentType = "image/png";
 
 export default async function Image() {
   const [heading, mono] = await Promise.all([
     fetch(
       "https://cdn.jsdelivr.net/fontsource/fonts/space-grotesk@latest/latin-700-normal.woff"
-    ).then((r) => r.arrayBuffer()),
+    ).then((res) => res.arrayBuffer()),
+
     fetch(
       "https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono@latest/latin-500-normal.woff"
-    ).then((r) => r.arrayBuffer()),
+    ).then((res) => res.arrayBuffer()),
   ]);
 
-  // Tanda siku di pojok (corner marks)
-  const corner = (pos: Record<string, number>, borders: Record<string, string>) => (
+  const corner = (
+    position: Record<string, number>,
+    borders: Record<string, string>
+  ) => (
     <div
       style={{
         position: "absolute",
         width: 28,
         height: 28,
         display: "flex",
-        ...pos,
+        ...position,
         ...borders,
       }}
     />
   );
+
   const line = "1px solid #3a3a3a";
 
-  // Cincin orbit di belakang teks
-  const ring = (d: number, o: number) => (
+  const ring = (diameter: number, opacity: number) => (
     <div
       style={{
         position: "absolute",
-        width: d,
-        height: d,
+        width: diameter,
+        height: diameter,
         borderRadius: 9999,
-        border: `1px solid rgba(255,255,255,${o})`,
+        border: `1px solid rgba(255,255,255,${opacity})`,
         display: "flex",
       }}
     />
@@ -67,9 +74,10 @@ export default async function Image() {
           justifyContent: "center",
           background: "#050505",
           position: "relative",
+          overflow: "hidden",
         }}
       >
-        {/* Grid */}
+        {/* GRID */}
         <div
           style={{
             position: "absolute",
@@ -82,7 +90,7 @@ export default async function Image() {
           }}
         />
 
-        {/* Fade grid ke tepi */}
+        {/* GRID FADE */}
         <div
           style={{
             position: "absolute",
@@ -93,7 +101,7 @@ export default async function Image() {
           }}
         />
 
-        {/* Spotlight dari atas */}
+        {/* TOP SPOTLIGHT */}
         <div
           style={{
             position: "absolute",
@@ -106,25 +114,56 @@ export default async function Image() {
           }}
         />
 
-        {/* Cincin orbit */}
+        {/* ORBIT RINGS */}
         {ring(420, 0.1)}
         {ring(640, 0.06)}
         {ring(860, 0.035)}
 
-        {/* Corner marks */}
-        {corner({ top: 36, left: 36 }, { borderTop: line, borderLeft: line })}
-        {corner({ top: 36, right: 36 }, { borderTop: line, borderRight: line })}
-        {corner({ bottom: 36, left: 36 }, { borderBottom: line, borderLeft: line })}
-        {corner({ bottom: 36, right: 36 }, { borderBottom: line, borderRight: line })}
+        {/* CORNER MARKS */}
+        {corner(
+          { top: 36, left: 36 },
+          { borderTop: line, borderLeft: line }
+        )}
 
-        {/* Elemen kiri */}
-        <div style={{ ...sideLabel, position: "absolute", left: 72, top: 258 }}>
+        {corner(
+          { top: 36, right: 36 },
+          { borderTop: line, borderRight: line }
+        )}
+
+        {corner(
+          { bottom: 36, left: 36 },
+          { borderBottom: line, borderLeft: line }
+        )}
+
+        {corner(
+          { bottom: 36, right: 36 },
+          { borderBottom: line, borderRight: line }
+        )}
+
+        {/* LEFT LABEL */}
+        <div
+          style={{
+            ...sideLabel,
+            position: "absolute",
+            left: 72,
+            top: 258,
+          }}
+        >
           <span style={{ color: "#ffffff" }}>01</span>
-          <div style={{ width: 36, height: 1, background: "#3a3a3a", display: "flex" }} />
+
+          <div
+            style={{
+              width: 36,
+              height: 1,
+              background: "#3a3a3a",
+              display: "flex",
+            }}
+          />
+
           <span>PORTFOLIO</span>
         </div>
 
-        {/* Elemen kanan */}
+        {/* RIGHT LABEL */}
         <div
           style={{
             ...sideLabel,
@@ -134,7 +173,14 @@ export default async function Image() {
             alignItems: "flex-end",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#ffffff" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
+              color: "#ffffff",
+            }}
+          >
             <div
               style={{
                 width: 10,
@@ -144,13 +190,23 @@ export default async function Image() {
                 display: "flex",
               }}
             />
+
             <span>OPEN</span>
           </div>
-          <div style={{ width: 36, height: 1, background: "#3a3a3a", display: "flex" }} />
+
+          <div
+            style={{
+              width: 36,
+              height: 1,
+              background: "#3a3a3a",
+              display: "flex",
+            }}
+          />
+
           <span>TO WORK</span>
         </div>
 
-        {/* Teks tengah */}
+        {/* MAIN CONTENT */}
         <div
           style={{
             display: "flex",
@@ -159,22 +215,37 @@ export default async function Image() {
             position: "relative",
           }}
         >
+          {/* NAME */}
           <div
             style={{
               display: "flex",
               fontFamily: "Space Grotesk",
-              fontSize: 112,
+              fontSize: 92,
               fontWeight: 700,
               letterSpacing: -4,
               lineHeight: 1,
-              color: "transparent",
-              backgroundImage: "linear-gradient(180deg, #ffffff 30%, #6f6f6f 100%)",
-              backgroundClip: "text",
+              color: "#ffffff",
             }}
           >
-            M.IKSANUDDIN
+            FAJRIEL
           </div>
 
+          <div
+            style={{
+              display: "flex",
+              fontFamily: "Space Grotesk",
+              fontSize: 92,
+              fontWeight: 700,
+              letterSpacing: -4,
+              lineHeight: 1,
+              color: "#ffffff",
+              marginTop: 4,
+            }}
+          >
+            ARIFTIANSYAH
+          </div>
+
+          {/* ROLE */}
           <div
             style={{
               display: "flex",
@@ -191,10 +262,20 @@ export default async function Image() {
               letterSpacing: 1,
             }}
           >
-            <span style={{ color: "#22c55e" }}></span>
+            <span
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: 9999,
+                background: "#22c55e",
+                display: "flex",
+              }}
+            />
+
             <span>Full Stack Web Developer</span>
           </div>
 
+          {/* SUBTITLE */}
           <div
             style={{
               display: "flex",
@@ -205,16 +286,41 @@ export default async function Image() {
               color: "#555555",
             }}
           >
-            Software Engineer
+            SOFTWARE ENGINEER
           </div>
+        </div>
+
+        {/* BOTTOM INFO */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 34,
+            display: "flex",
+            fontFamily: "JetBrains Mono",
+            fontSize: 16,
+            letterSpacing: 3,
+            color: "#444444",
+          }}
+        >
+          FAJRIELARIFTIANSYAH.MY.ID
         </div>
       </div>
     ),
     {
       ...size,
       fonts: [
-        { name: "Space Grotesk", data: heading, weight: 700, style: "normal" },
-        { name: "JetBrains Mono", data: mono, weight: 500, style: "normal" },
+        {
+          name: "Space Grotesk",
+          data: heading,
+          weight: 700,
+          style: "normal",
+        },
+        {
+          name: "JetBrains Mono",
+          data: mono,
+          weight: 500,
+          style: "normal",
+        },
       ],
     }
   );
