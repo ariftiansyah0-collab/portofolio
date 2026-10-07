@@ -10,7 +10,7 @@ export default function HeroSection() {
         items-center pt-30 py-10">
 
             {/* background glow */}
-           {/*} <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-80 h-80rounded-full blur-3xl bg-primary/10"/>
+           <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-80 h-80rounded-full blur-3xl bg-primary/10"/>
             <div className="inset-0 absolute">
                 <Aurora
                     colorStops={["#072d9d","#012e62","#123499"]}
