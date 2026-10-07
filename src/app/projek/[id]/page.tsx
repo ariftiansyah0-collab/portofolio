@@ -16,17 +16,24 @@ interface DetailProps {
 
 export async function generateMetadata({ params }: DetailProps): Promise<Metadata> {
   const { id } = await params;
-  const { data: proyek } = await supabase.from('proyek').select('judul, deskripsi').eq('id', id).single();
+  const { data: proyek } = await supabase
+    .from('proyek')
+    .select('judul, deskripsi, detail')
+    .eq('id', id)
+    .single();
 
  if (!proyek) {
     return { title: 'Proyek Tidak Ditemukan' };
   }
-  return {
+
+ const deskripsiLengkap = proyek.detail || proyek.deskripsi;
+
+ return {
       title: proyek.judul,
-      description: proyek.deskripsi,
+      description: deskripsiLengkap,
       openGraph: {
       title: proyek.judul,
-      description: proyek.deskripsi,
+      description: deskripsiLengkap,
     },
   };
 }
@@ -67,7 +74,7 @@ export default async function ProjectPage({ params }: Props) {
         </div>
         <div className="mb-10 max-w-3xl">
           <h1 className="mb-5 text-4xl font-bold tracking-tight md:text-6xl">{project.judul}</h1>
-          <p className="text-lg leading-relaxed text-zinc-400">{project.deskripsi}</p>
+
         </div>
 
         <div className="relative mb-12 overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">

@@ -5,14 +5,13 @@ import { supabase } from '@/lib/supabase';
 interface Project {
   id: number;
   judul: string;
-  deskripsi: string;
   gambar: string;
 }
 
 export default async function ProjekPage() {
   const { data: projek, error } = await supabase
     .from("proyek")
-    .select("id, judul, deskripsi, gambar")
+    .select("id, judul, gambar")
     .order("id", { ascending: true });
 
   if (error) {
@@ -43,6 +42,9 @@ export default async function ProjekPage() {
         duration-all duration-300
         hover:-translate-y-1 hover:border-primary/50 hover:shadow-lg"
           >
+            <div className="p-4">
+              <h2 className="text-lg font-semibold mb-2">{project.judul}</h2>
+            </div>
             <div className="relative w-full h-48">
               <Image
                 src={project.gambar}
@@ -50,12 +52,6 @@ export default async function ProjekPage() {
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
-            </div>
-            <div className="p-4">
-              <h2 className="text-lg font-semibold mb-2">{project.judul}</h2>
-              <p className="text-sm text-gray-400 line-clamp-2">
-                {project.deskripsi}
-              </p>
             </div>
           </Link>
         ))}

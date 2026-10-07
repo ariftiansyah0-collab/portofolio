@@ -8,6 +8,7 @@ type EditModalProps = {
     id: number | string;
     judul: string;
     deskripsi: string | null;
+    detail: string | null;
     teknologi: string | null;
     link: string | null;
     gambar: string | null;
@@ -77,15 +78,29 @@ export default function EditModal({ proyek, action }: EditModalProps) {
               </div>
               <div>
                 <label htmlFor={`edit-deskripsi-${proyek.id}`} className="mb-1 block text-sm font-medium text-gray-300">
-                  Deskripsi
+                  Deskripsi singkat untuk section project
                 </label>
                 <textarea
                   id={`edit-deskripsi-${proyek.id}`}
                   name="deskripsi"
                   defaultValue={proyek.deskripsi ?? ''}
-                  rows={4}
+                  rows={3}
                   className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text focus:outline-none focus:ring-2 focus:ring-primary"
                 />
+                <p className="mt-1 text-xs text-gray-400">Teks ini ditampilkan secara ringkas di kartu proyek.</p>
+              </div>
+              <div>
+                <label htmlFor={`edit-detail-${proyek.id}`} className="mb-1 block text-sm font-medium text-gray-300">
+                  Deskripsi lengkap untuk detail proyek
+                </label>
+                <textarea
+                  id={`edit-detail-${proyek.id}`}
+                  name="detail"
+                  defaultValue={proyek.detail ?? ''}
+                  rows={6}
+                  className="w-full rounded-lg border border-border bg-surface px-3 py-2 text-sm text-text focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <p className="mt-1 text-xs text-gray-400">Teks ini muncul penuh saat pengguna membuka detail proyek.</p>
               </div>
               <div>
                 <label htmlFor={`edit-link-${proyek.id}`} className="mb-1 block text-sm font-medium text-gray-300">

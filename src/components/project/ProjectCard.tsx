@@ -32,7 +32,7 @@ export default function ProjectCard({id,title,description,liveURL,githubURL,imag
                     <h3 className="text-xl font-semibold text-text
                     group-hover:text-primary transition">{title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="line-clamp-3 text-gray-400 text-sm leading-relaxed">
                         {description}
                     </p>
 

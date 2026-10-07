@@ -78,7 +78,8 @@ async function tambahProyekAction(formData: FormData) {
     const fotoTerunggah = await unggahFotoProyek(supabase, foto);
     const { error } = await supabase.from('proyek').insert({
         judul: formData.get('judul') as string,
-        deskripsi: formData.get('deskripsi') as string,
+        deskripsi: (formData.get('deskripsi') as string).trim(),
+        detail: (formData.get('detail') as string).trim(),
         teknologi: formData.get('teknologi') as string,
         link: (formData.get('link') as string) || null,
         gambar: fotoTerunggah.url,
@@ -136,12 +137,14 @@ async function editProyekAction(formData: FormData) {
     const perubahan: {
         judul: string;
         deskripsi: string;
+        detail: string;
         teknologi: string;
         link: string | null;
         gambar?: string;
     } = {
         judul: formData.get('judul') as string,
-        deskripsi: formData.get('deskripsi') as string,
+        deskripsi: (formData.get('deskripsi') as string).trim(),
+        detail: (formData.get('detail') as string).trim(),
         teknologi: formData.get('teknologi') as string,
         link: (formData.get('link') as string) || null,
     };
@@ -220,6 +223,7 @@ export default async function AdminProyekPage() {
                                                             id: proyek.id,
                                                             judul: proyek.judul,
                                                             deskripsi: proyek.deskripsi,
+                                                            detail: proyek.detail,
                                                             teknologi: proyek.teknologi,
                                                             link: proyek.link,
                                                             gambar: proyek.gambar,
@@ -258,8 +262,13 @@ export default async function AdminProyekPage() {
                             </div>
 
                             <div className="min-w-0">
-                                <label htmlFor="deskripsi" className="mb-1.75 block text-xs font-bold text-[#d4dbd8]">Deskripsi</label>
-                                <textarea id="deskripsi" name="deskripsi" rows={3} className="min-h-22 w-full resize-y rounded-md border border-border bg-surface px-2.75 py-2.25 text-[13px] text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-[#53916d]/20" />
+                                <label htmlFor="deskripsi" className="mb-1.75 block text-xs font-bold text-[#d4dbd8]">Deskripsi singkat untuk section project</label>
+                                <textarea id="deskripsi" name="deskripsi" rows={3} placeholder="Masukkan ringkasan singkat yang akan ditampilkan di kartu proyek." className="min-h-22 w-full resize-y rounded-md border border-border bg-surface px-2.75 py-2.25 text-[13px] text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-[#53916d]/20" />
+                            </div>
+
+                            <div className="min-w-0">
+                                <label htmlFor="detail" className="mb-1.75 block text-xs font-bold text-[#d4dbd8]">Deskripsi lengkap untuk detail proyek</label>
+                                <textarea id="detail" name="detail" rows={6} placeholder="Masukkan detail lengkap yang akan muncul saat membuka proyek." className="min-h-32 w-full resize-y rounded-md border border-border bg-surface px-2.75 py-2.25 text-[13px] text-text outline-none transition focus:border-primary focus:ring-2 focus:ring-[#53916d]/20" />
                             </div>
 
                             <div className="grid gap-4 md:grid-cols-2">
