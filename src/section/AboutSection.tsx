@@ -6,7 +6,7 @@ import { LuCode, LuDatabase, LuGamepad, LuRocket, LuUniversity } from "react-ico
 
 export default function AboutSection() {
     return (
-        <section id="about" className="py-24 overflow-hidden relative">        
+        <section id="about" className="py-24 overflow-hidden relative"> 
             <div className="absolute top-1/4 left-1/3 -translate-x-1/2 w-80 h-80 rounded-full blur-3xl bg-primary/10"/>
             <div className="w-[90%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Leftside */}

@@ -67,8 +67,8 @@ export default async function ProjectPage({ params }: Props) {
     : project.teknologi?.split(/\s*-\s*|,\s*/) ?? []
 
   return (
-    <main className="min-h-screen bg-gray text-white">
-      <div className="mx-auto max-w-6xl px-6 py-16">
+    <main className="relative min-h-screen text-white">
+      <div className="relative z-10 mx-auto max-w-6xl px-6 py-16">
         <div className="flex justify-between mb-10 max-w-3xl">
           <BackButton />
         </div>
@@ -86,25 +86,12 @@ export default async function ProjectPage({ params }: Props) {
             className="h-auto w-full object-cover"
           />
         </div>
-
-        {/* Content */}
         <div className="grid gap-12 md:grid-cols-[1fr_300px] hover:bg-auto">
-
-          {/* Description */}
           <section>
-            <h2 className="mb-4 text-2xl font-semibold">Deskripsi
-            </h2>
-
-            <p className="leading-8 text-zinc-600">
-              {project.detail ?? project.deskripsi}
-            </p>
+            <h2 className="mb-4 text-2xl font-semibold">Deskripsi</h2>
+            <p className="leading-8 text-zinc-600"> {project.detail ?? project.deskripsi}</p>
           </section>
-
-          {/* Sidebar */}
-          <aside>
-            <h2 className="mb-4 text-xl font-semibold">
-              Teknologi
-            </h2>
+          <aside><h2 className="mb-4 text-xl font-semibold">Teknologi</h2>
 
             <div className="mb-8 flex flex-wrap gap-2">
               {technologies.map((tech) => (

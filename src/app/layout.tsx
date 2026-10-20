@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Geist } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/navbar/Navbar";
 import Logo from "../components/navbar/Logo";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -56,12 +59,11 @@ export default function RootLayout({
   return (
     <html
       lang="id" 
-      className={`${poppins.className} h-full antialiased scroll-smooth`}
+      className={cn("h-full", "antialiased", "scroll-smooth", poppins.className, "font-sans", geist.variable)}
     >
-      <body className="flex-1 w-full flex flex-col text-white px-6">
+      <body className="flex-1 w-full flex flex-col text-white">
         {children}
       </body>
     </html>
   );
 }
-

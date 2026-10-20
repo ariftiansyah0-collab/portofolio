@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { supabase } from '@/lib/supabase';
 
+
 interface Project {
   id: number;
   judul: string;
@@ -19,9 +20,11 @@ export default async function ProjekPage() {
   }
 
   return (
-    <main className="max-w-6xl mx-auto px-6 py-10 text-white">
-        <div className="flex justify-between mb-10 max-w-3xl">
-          <Link 
+
+    <main className="relative min-h-screen overflow-hidden px-6 py-10 text-white">
+      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="flex justify-between mb-10 max-w-3xl">
+        <Link 
           href="/#projects"
           className="px-8 py-3 rounded-full bg-primary text-gray-200 font-medium hover:opacity-90 transition 
           flex items-center justify-center gap-4 cursor-pointer">
@@ -55,6 +58,8 @@ export default async function ProjekPage() {
             </div>
           </Link>
         ))}
+      </div>
+              
       </div>
     </main>
   );
